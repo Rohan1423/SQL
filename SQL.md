@@ -17,11 +17,13 @@ What is SQL?
 SQL is Structured Query Language - used to store, manipulate and retrieve data from
 RDBMS.
 (It is not a database, it is a language used to interact with database)
+
 We use SQL for CRUD Operations :
 ● CREATE - To create databases, tables, insert tuples in tables etc
 ● READ - To read data present in the database.
 ● UPDATE - Modify already inserted data.
 ● DELETE - Delete database, table or specific data point/tuple/row or multiple rows.
+
 *Note - SQL keywords are NOT case sensitive. Eg: select is the same as SELECT in SQL.
 
 SQL v/s MySQL
@@ -32,54 +34,54 @@ SQL Data Types
 In SQL, data types define the kind of data that can be stored in a column or variable.
 To See all data types of MYSQL, visit :
 https://dev.mysql.com/doc/refman/8.0/en/data-types.html
+
 Here are the frequently used SQL data types:
-DATATYPE DESCRIPTION USAGE
-CHAR string(0-255), can store characters of fixed length CHAR(50)
-VARCHAR string(0-255), can store characters up to given length VARCHAR(50)
-BLOB string(0-65535), can store binary large object BLOB(1000)
-INT integer( -2,147,483,648 to 2,147,483,647 ) INT
-TINYINT integer(-128 to 127) TINYINT
-BIGINT integer( -9,223,372,036,854,775,808 to
-9,223,372,036,854,775,807 )
-
-BIGINT
-
-BIT can store x-bit values. x can range from 1 to 64 BIT(2)
-FLOAT Decimal number - with precision to 23 digits FLOAT
-DOUBLE Decimal number - with 24 to 53 digits DOUBLE
-BOOLEAN Boolean values 0 or 1 BOOLEAN
-DATE date in format of YYYY-MM-DD ranging from
-
-1000-01-01 to 9999-12-31
-
-DATE
-
-TIME HH:MM:SS TIME
+DATATYPE        DESCRIPTION                                                          USAGE
+CHAR            string(0-255), can store characters of fixed length                  CHAR(50)
+VARCHAR         string(0-255), can store characters up to given length               VARCHAR(50)
+BLOB            string(0-65535), can store binary large object                       BLOB(1000)
+INT             integer( -2,147,483,648 to 2,147,483,647 )                           INT
+TINYINT         integer(-128 to 127)                                                 TINYINT
+BIGINT          integer(-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807)     BIGINT
+BIT             can store x-bit values. x can range from 1 to 64                     BIT(2)
+FLOAT           Decimal number - with precision to 23 digits                         FLOAT
+DOUBLE          Decimal number - with 24 to 53 digits                                DOUBLE
+BOOLEAN         Boolean values 0 or 1                                                BOOLEAN
+DATE            date in format of YYYY-MM-DD ranging from 1000-01-01 to 9999-12-31   DATE
+TIME            HH:MM:SS                                                             TIME
 YEAR year in 4 digits format ranging from 1901 to 2155 YEAR
 
-*Note - CHAR is for fixed length & VARCHAR is for variable length strings. Generally,
+Note - CHAR is for fixed length & VARCHAR is for variable length strings. Generally,
 VARCHAR is better as it only occupies necessary memory & works more efficiently.
+
 We can also use UNSIGNED with datatypes when we only have positive values to add.
 Eg - UNSIGNED INT
 
 Types of SQL Commands:
 
-1. DQL (Data Query Language) : Used to retrieve data from databases. (SELECT)
-2. DDL (Data Definition Language) : Used to create, alter, and delete database objects
+1. DDL (Data Definition Language) : Used to create, alter, and delete database objects
 like tables, indexes, etc. (CREATE, DROP, ALTER, RENAME, TRUNCATE)
+
+2. DQL (Data Query Language) : Used to retrieve data from databases. (SELECT)
+
 3. DML (Data Manipulation Language): Used to modify the database. (INSERT,
 UPDATE, DELETE)
+
 4. DCL (Data Control Language): Used to grant & revoke permissions. (GRANT,
 REVOKE)
+
 5. TCL (Transaction Control Language): Used to manage transactions. (COMMIT,
 ROLLBACK, START TRANSACTIONS, SAVEPOINT)
 
 1. Data Definition Language (DDL)
+
 Data Definition Language (DDL) is a subset of SQL (Structured Query Language)
 responsible for defining and managing the structure of databases and their objects.
 DDL commands enable you to create, modify, and delete database objects like tables,
 indexes, constraints, and more.
+
 Key DDL Commands are:
+
 ● CREATE TABLE:
 ○ Used to create a new table in the database.
 ○ Specifies the table name, column names, data types, constraints, and more.
@@ -91,6 +93,7 @@ salary DECIMAL(10, 2));
 ○ Used to modify the structure of an existing table.
 ○ You can add, modify, or drop columns, constraints, and more.
 ○ Example: ALTER TABLE employees ADD COLUMN email VARCHAR(100);
+
 ● DROP TABLE:
 ○ Used to delete an existing table along with its data and structure.
 ○ Example: DROP TABLE employees;
@@ -99,9 +102,11 @@ salary DECIMAL(10, 2));
 ○ Used to create an index on one or more columns in a table.
 ○ Improves query performance by enabling faster data retrieval.
 ○ Example: CREATE INDEX idx_employee_name ON employees (name);
+
 ● DROP INDEX:
 ○ Used to remove an existing index from a table.
 ○ Example: DROP INDEX idx_employee_name;
+
 ● CREATE CONSTRAINT:
 ○ Used to define constraints that ensure data integrity.
 ○ Constraints include PRIMARY KEY, FOREIGN KEY, UNIQUE, NOT NULL,
@@ -112,6 +117,7 @@ KEY (customer_id) REFERENCES customers(id);
 ● DROP CONSTRAINT:
 ○ Used to remove an existing constraint from a table.
 ○ Example: ALTER TABLE orders DROP CONSTRAINT fk_customer;
+
 ● TRUNCATE TABLE:
 ○ Used to delete the data inside a table, but not the table itself.
 ○ Syntax – TRUNCATE TABLE table_name
@@ -145,7 +151,6 @@ Operators used in WHERE are:
 Note: In some versions of SQL this operator may be written as !=
 
 ● AND, OR and NOT:
-
 - The WHERE clause can be combined with AND, OR, and NOT operators.
 - The AND and OR operators are used to filter records based on more than one
 condition:
@@ -212,10 +217,12 @@ employees;
 ● ORDER BY
 The ORDER BY clause allows you to sort the result set of a query based on one or more
 columns.
+
 Basic Syntax:
 - The ORDER BY clause is used after the SELECT statement to sort query results.
 - Syntax: SELECT column1, column2 FROM table_name ORDER BY column1
 [ASC|DESC];
+
 Ascending and Descending Order:
 - By default, the ORDER BY clause sorts in ascending order (smallest to largest).
 - You can explicitly specify descending order using the DESC keyword.
@@ -247,48 +254,62 @@ ASC;
 ● GROUP BY
 The GROUP BY clause in SQL is used to group rows from a table based on one or more
 columns.
+
 Syntax:
 - The GROUP BY clause follows the SELECT statement and is used to group rows
 based on specified columns.
 - Syntax: SELECT column1, aggregate_function(column2) FROM table_name
 GROUP BY column1;
+
 - Aggregation Functions:
 ○ Aggregation functions (e.g., COUNT, SUM, AVG, MAX, MIN) are often used
 with GROUP BY to calculate values for each group.
+
 ○ Example: SELECT department, AVG(salary) FROM employees GROUP BY
 department;
 
 - Grouping by Multiple Columns:
+
 ○ You can group by multiple columns by listing them in the GROUP BY clause.
 ○ This creates a hierarchical grouping based on the specified columns.
+
 ○ Example: SELECT department, gender, AVG(salary) FROM employees
 GROUP BY department, gender;
 
 - HAVING Clause:
+
 ○ The HAVING clause is used with GROUP BY to filter groups based on
 aggregate function results.
 ○ It's similar to the WHERE clause but operates on grouped data.
+
 ○ Example: SELECT department, AVG(salary) FROM employees GROUP BY
 department HAVING AVG(salary) > 50000;
+
 - Combining GROUP BY and ORDER BY:
 ○ You can use both GROUP BY and ORDER BY in the same query to control
 the order of grouped results.
+
 ○ Example: SELECT department, COUNT(*) FROM employees GROUP BY
 department ORDER BY COUNT(*) DESC;
 
 ● AGGREGATE FUNCTIONS
 These are used to perform calculations on groups of rows or entire result sets. They provide
 insights into data by summarising and processing information.
+
 Common Aggregate Functions:
+
 - COUNT():
 Counts the number of rows in a group or result set.
+
 - SUM():
 Calculates the sum of numeric values in a group or result set.
-- AVG():
 
+- AVG():
 Computes the average of numeric values in a group or result set.
+
 - MAX():
 Finds the maximum value in a group or result set.
+
 - MIN():
 Retrieves the minimum value in a group or result set.
 
@@ -297,6 +318,7 @@ Retrieves the minimum value in a group or result set.
 Data Manipulation Language (DML) in SQL encompasses commands that manipulate data
 within a database. DML allows you to insert, update, and delete records, ensuring the
 accuracy and currency of your data.
+
 ● INSERT:
 - The INSERT statement adds new records to a table.
 - Syntax: INSERT INTO table_name (column1, column2, ...) VALUES (value1, value2,
@@ -309,6 +331,7 @@ accuracy and currency of your data.
 - Syntax: UPDATE table_name SET column1 = value1, column2 = value2, ... WHERE
 condition;
 - Example: UPDATE employees SET salary = 55000 WHERE first_name = 'John';
+
 ● DELETE:
 - The DELETE statement removes records from a table.
 - Syntax: DELETE FROM table_name WHERE condition;
@@ -322,8 +345,10 @@ DCL commands are used to control who can access the data, modify the data, or pe
 administrative tasks within a database.
 DCL is an important aspect of database security, ensuring that data remains protected and
 only authorised users have the necessary privileges.
+
 There are two main DCL commands in SQL: GRANT and REVOKE.
 1. GRANT:
+
 The GRANT command is used to provide specific privileges or permissions to users or roles.
 Privileges can include the ability to perform various actions on tables, views, procedures,
 and other database objects.
@@ -342,6 +367,7 @@ Example: Granting SELECT privilege on a table named "Employees" to a user named
 GRANT SELECT ON Employees TO Analyst;
 
 2. REVOKE:
+
 The REVOKE command is used to remove or revoke specific privileges or permissions that
 have been previously granted to users or roles.
 Syntax:
@@ -366,6 +392,7 @@ ensures that only users who require specific privileges can perform certain acti
 database objects.
 
 5. Transaction Control Language (TCL)
+
 Transaction Control Language (TCL) deals with the management of transactions within a
 database.
 TCL commands are used to control the initiation, execution, and termination of transactions,
@@ -377,6 +404,7 @@ success or failure of those operations.
 There are three main TCL commands in SQL: COMMIT, ROLLBACK, and SAVEPOINT.
 
 1. COMMIT:
+
 The COMMIT command is used to permanently save the changes made during a
 transaction.
 
@@ -384,6 +412,7 @@ It makes all the changes applied to the database since the last COMMIT or ROLLBA
 command permanent.
 Once a COMMIT is executed, the transaction is considered successful, and the changes are
 made permanent.
+
 Example: Committing changes made during a transaction:
 UPDATE Employees
 SET Salary = Salary * 1.10
@@ -391,10 +420,12 @@ WHERE Department = 'Sales';
 COMMIT;
 
 2. ROLLBACK:
+
 The ROLLBACK command is used to undo changes made during a transaction.
 It reverts all the changes applied to the database since the transaction began.
 ROLLBACK is typically used when an error occurs during the execution of a transaction,
 ensuring that the database remains in a consistent state.
+
 Example: Rolling back changes due to an error during a transaction:
 BEGIN;
 UPDATE Inventory
@@ -404,11 +435,14 @@ WHERE ProductID = 101;
 ROLLBACK;
 
 3. SAVEPOINT:
+
 The SAVEPOINT command creates a named point within a transaction, allowing you to set a
 point to which you can later ROLLBACK if needed.
 SAVEPOINTs are useful when you want to undo part of a transaction while preserving other
 changes.
+
 Syntax: SAVEPOINT savepoint_name;
+
 Example: Using SAVEPOINT to create a point within a transaction:
 BEGIN;
 
@@ -425,6 +459,7 @@ ROLLBACK TO before_withdrawal;
 COMMIT;
 
 TCL and Transaction Management:
+
 Transaction Control Language (TCL) commands are vital for managing the integrity and
 consistency of a database's data.
 They allow you to group related changes into transactions, and in the event of errors, either
@@ -447,48 +482,55 @@ Types of Joins:
 4. Self Join
 
 1) Inner Join
+
 An inner join combines data from two or more tables based on a specified condition, known
 as the join condition.
 The result of an inner join includes only the rows where the join condition is met in all
 participating tables.
 It essentially filters out non-matching rows and returns only the rows that have matching
 values in both tables.
+
 Syntax:
 SELECT columns
 FROM table1
 INNER JOIN table2
 ON table1.column = table2.column;
+
 Here:
 ● columns refers to the specific columns you want to retrieve from the tables.
 ● table1 and table2 are the names of the tables you are joining.
 ● column is the common column used to match rows between the tables.
 ● The ON clause specifies the join condition, where you define how the tables are
 related.
+
 Example: Consider two tables: Customers and Orders.
+
 Customers Table:
-CustomerID CustomerName
-1 Alice
-2 Bob
-3 Carol
+CustomerID      CustomerName
+1               Alice
+2               Bob
+3               Carol
 
 Orders Table:
-OrderID CustomerID Product
+OrderID     CustomerID      Product
 
-101 1 Laptop
-102 3 Smartphone
-103 2 Headphones
+101         1               Laptop
+102         3               Smartphone
+103         2               Headphones
 
 Inner Join Query:
 SELECT Customers.CustomerName, Orders.Product
 FROM Customers
 INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+
 Result:
-CustomerName Product
-Alice Laptop
-Bob Headphones
-Carol Smartphone
+CustomerName    Product
+Alice           Laptop
+Bob             Headphones
+Carol           Smartphone
 
 2) Outer Join
+
 Outer joins combine data from two or more tables based on a specified condition, just like
 inner joins. However, unlike inner joins, outer joins also include rows that do not have
 matching values in both tables.
@@ -499,63 +541,70 @@ Types:
 There are three types of outer joins: left outer join, right outer join, and full outer join.
 
 1. Left Outer Join (Left Join):
+
 A left outer join returns all the rows from the left table and the matching rows from the right
 table.
 
 If there is no match in the right table, the result will still include the left table's row with NULL
 values in the right table's columns.
+
 Example:
 SELECT Customers.CustomerName, Orders.Product
 FROM Customers
 LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
-Result:
 
-CustomerName Product
-Alice Laptop
-Bob Headphones
-Carol Smartphone
-NULL Monitor
+Result:
+CustomerName    Product
+Alice           Laptop
+Bob             Headphones
+Carol           Smartphone
+NULL            Monitor
 
 In this example, the left outer join includes all rows from the Customers table.
 Since there is no matching customer for the order with OrderID 103 (Monitor), the result
 includes a row with NULL values in the CustomerName column.
 
 2. Right Outer Join (Right Join):
+
 A right outer join is similar to a left outer join, but it returns all rows from the right table and
 the matching rows from the left table.
 If there is no match in the left table, the result will still include the right table's row with NULL
 values in the left table's columns.
+
 Example: Using the same Customers and Orders tables.
+
 SELECT Customers.CustomerName, Orders.Product
 FROM Customers
 RIGHT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
-Result:
 
-CustomerName Product
-Alice Laptop
-Carol Smartphone
-Bob Headphones
-NULL Keyboard
+Result:
+CustomerName    Product
+Alice           Laptop
+Carol           Smartphone
+Bob             Headphones
+NULL            Keyboard
 
 Here, the right outer join includes all rows from the Orders table. Since there is no matching
 order for the customer with CustomerID 4, the result includes a row with NULL values in the
 CustomerName column.
 
 3. Full Outer Join (Full Join):
+
 A full outer join returns all rows from both the left and right tables, including matches and
 non-matches.
 If there's no match, NULL values appear in columns from the table where there's no
 corresponding value.
+
 Example: Using the same Customers and Orders tables.
 SELECT Customers.CustomerName, Orders.Product
 FROM Customers
 FULL OUTER JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
-Result:
 
-CustomerName Product
-Alice Laptop
-Bob Headphones
-Carol Smartphone
+Result:
+CustomerName    Product
+Alice           Laptop
+Bob             Headphones
+Carol           Smartphone
 
 NULL Monitor
 NULL Keyboard
@@ -565,6 +614,7 @@ non-matching rows from the Customers and Orders tables are represented with NULL
 values.
 
 3) Cross Join
+
 A cross join, also known as a Cartesian product, is a type of join operation in a Database
 Management System (DBMS) that combines every row from one table with every row from
 another table.
@@ -573,44 +623,47 @@ between the tables. Instead, it generates a result set that contains all possibl
 of rows from both tables.
 Cross joins can lead to a large result set, especially when the participating tables have many
 rows.
+
 Syntax:
 SELECT columns
 FROM table1
 CROSS JOIN table2;
+
 In this syntax:
 ● columns refers to the specific columns you want to retrieve from the cross-joined
 tables.
 ● table1 and table2 are the names of the tables you want to combine using a cross
 join.
+
 Example: Consider two tables: Students and Courses.
 Students Table:
-StudentID StudentName
-1           Alice
-
-2           Bob
+StudentID       StudentName
+1               Alice
+2               Bob
 
 Courses Table:
-CourseID CourseName
-101 Maths
-102 Science
+CourseID    CourseName
+101         Maths
+102         Science
 
 Cross Join Query:
 SELECT Students.StudentName, Courses.CourseName
 FROM Students
 CROSS JOIN Courses;
-Result:
 
-StudentName CourseName
-Alice Maths
-Alice Science
-Bob Maths
-Bob Science
+Result:
+StudentName     CourseName
+Alice           Maths
+Alice           Science
+Bob             Maths
+Bob             Science
 
 In this example, the cross join between the Students and Courses tables generates all
 possible combinations of rows from both tables. As a result, each student is paired with each
 course, leading to a total of four rows in the result set.
 
 4) Self Join
+
 A self join involves joining a table with itself.
 This technique is useful when a table contains hierarchical or related data and you need to
 compare or analyse rows within the same table.
@@ -619,35 +672,39 @@ Self joins are commonly used to find relationships, hierarchies, or patterns wit
 table.
 In a self join, you treat the table as if it were two separate tables, referring to them with
 different aliases.
+
 Syntax:
 The syntax for performing a self join in SQL is as follows:
 SELECT columns
 FROM table1 AS alias1
 JOIN table1 AS alias2 ON alias1.column = alias2.column;
+
 In this syntax:
 ● columns refers to the specific columns you want to retrieve from the self-joined table.
 ● table1 is the name of the table you're joining with itself.
 ● alias1 and alias2 are aliases you assign to the table instances for differentiation.
 ● column is the column you use as the join condition to link rows from the same table.
+
 Example: Consider an Employees table that contains information about employees and their
 managers.
+
 Employees Table:
-EmployeeID EmployeeName ManagerID
-1 Alice 3
-2 Bob 3
-3 Carol NULL
-4 David 1
+EmployeeID      EmployeeName     ManagerID
+1               Alice            3
+2               Bob              3
+3               Carol            NULL
+4               David            1
 
 Self Join Query:
 SELECT e1.EmployeeName AS Employee, e2.EmployeeName AS Manager
 FROM Employees AS e1
 JOIN Employees AS e2 ON e1.ManagerID = e2.EmployeeID;
-Result:
-Employee Manager
 
-Alice Carol
-Bob Carol
-David Alice
+Result:
+Employee    Manager
+Alice       Carol
+Bob         Carol
+David       Alice
 
 In this example, the self join is performed on the Employees table to find the relationship
 between employees and their managers. The join condition connects the ManagerID column
@@ -662,6 +719,7 @@ They allow you to perform operations similar to those in set theory, such as uni
 intersection, and difference, on the data retrieved from different tables or queries.
 Set operations provide powerful tools for managing and manipulating data, enabling you to
 analyse and combine information in various ways.
+
 There are four primary set operations in SQL:
 ● UNION
 ● INTERSECT
@@ -669,6 +727,7 @@ There are four primary set operations in SQL:
 ● UNION ALL
 
 1. UNION:
+
 The UNION operator combines the result sets of two or more SELECT queries into a single
 result set.
 It removes duplicates by default, meaning that if there are identical rows in the result sets,
@@ -677,19 +736,20 @@ Example:
 Assume we have two tables: Customers and Suppliers.
 
 Customers Table:
-CustomerID CustomerName
-1           Alice
-2           Bob
+CustomerID      CustomerName
+1               Alice
+2               Bob
 
 Suppliers Table:
-SupplierID SupplierName
-101 SupplierA
-102 SupplierB
+SupplierID      SupplierName
+101             SupplierA
+102             SupplierB
 
 UNION Query:
 SELECT CustomerName FROM Customers
 UNION
 SELECT SupplierName FROM Suppliers;
+
 Result:
 CustomerName
 Alice
@@ -698,6 +758,7 @@ SupplierA
 SupplierB
 
 2. INTERSECT:
+
 The INTERSECT operator returns the common rows that exist in the result sets of two or
 more SELECT queries.
 It only returns distinct rows that appear in all result sets.
@@ -706,15 +767,18 @@ Example: Using the same tables as before.
 SELECT CustomerName FROM Customers
 INTERSECT
 SELECT SupplierName FROM Suppliers;
+
 Result:
 CustomerName
 In this example, there are no common names between customers and suppliers, so the
 result is an empty set.
 
 3. EXCEPT (or MINUS):
+
 The EXCEPT operator (also known as MINUS in some databases) returns the distinct rows
 that are present in the result set of the first SELECT query but not in the result set of the
 second SELECT query.
+
 Example: Using the same tables as before.
 SELECT CustomerName FROM Customers
 EXCEPT
@@ -729,6 +793,7 @@ In this example, the names "Alice" and "Bob" are customers but not suppliers, so
 appear in the result set.
 
 4. UNION ALL:
+
 The UNION ALL operator performs the same function as the UNION operator but does not
 remove duplicates from the result set. It simply concatenates all rows from the different
 result sets.
@@ -737,111 +802,65 @@ Example: Using the same tables as before.
 SELECT CustomerName FROM Customers
 UNION ALL
 SELECT SupplierName FROM Suppliers;
-Result:
 
+Result:
 CustomerName
 Alice
 Bob
 SupplierA
 SupplierB
 
-Difference between Set Operations and Joins
+# Difference Between Set Operations and Joins
 
-Aspect Set Operations Joins
+  -----------------------------------------------------------------------
+  Aspect                  Set Operations          Joins
+  ----------------------- ----------------------- -----------------------
+  **Purpose**             Manipulate result sets  Combine data from
+                          based on set theory     related tables based on
+                          principles.             specified conditions.
 
-Purpose
+  **Data Source**         Result sets of `SELECT` Tables that are related
+                          queries.                by common columns.
 
-Manipulate result sets based on
-set theory principles.
+  **Combining Rows**      Combine rows from       Combine rows from
+                          different result sets;  different tables based
+                          may remove duplicates.  on specified
+                                                  conditions.
 
-Combine data from related
-tables based on specified
-conditions.
+  **Output Columns**      `SELECT` queries must   Can combine columns
+                          have the same number of from different tables
+                          columns and compatible  regardless of column
+                          data types.             count or data types.
 
-Data Source Result sets of SELECT queries.
+  **Common Operations**   `UNION`, `INTERSECT`,   `INNER JOIN`,
+                          `EXCEPT` (`MINUS` in    `LEFT JOIN`,
+                          some databases).        `RIGHT JOIN`,
+                                                  `FULL JOIN`.
 
-Tables that are related by
-common columns.
+  **Conditional           No join conditions      Requires specified join
+  Requirements**          required.               conditions for
+                                                  combining data.
 
-Combining Rows
+  **Handling Duplicates** `UNION` removes         Duplicates depend on
+                          duplicates by default.  the join type and
+                                                  underlying data.
 
-Combine rows from different
-result sets. May remove
-duplicates.
+  **Usage Scenarios**     Useful for combining    Used to retrieve and
+                          and analyzing results   relate data from
+                          from different queries  different tables based
+                          or tables.              on relationships.
 
-Combine rows from different
-tables based on specified
-conditions.
+  **Result Set            Result sets may have    Result sets can have
+  Structure**             different column names, different column names,
+                          but column counts and   data types, and column
+                          data types must match.  counts.
 
-Output Columns
+  **Performance           Generally faster and    Can be more complex and
+  Considerations**        less complex than       resource-intensive,
+                          joins.                  especially for large
+                                                  datasets.
+  -----------------------------------------------------------------------
 
-Require the SELECT queries to
-have the same number of output
-columns and compatible data
-types.
-
-Can combine columns from
-different tables, regardless of
-data types or column numbers.
-
-Common
-Operations
-
-UNION, INTERSECT, EXCEPT
-(MINUS).
-
-INNER JOIN, LEFT JOIN, RIGHT
-JOIN, FULL JOIN.
-
-Conditional
-Requirements
-
-No specific join conditions are
-required.
-
-Require specified join conditions
-for combining data.
-
-Handling
-Duplicates
-
-UNION removes duplicates by
-default.
-
-Joins do not inherently handle
-duplicates; it depends on the join
-type and data.
-
-Usage Scenarios
-
-Useful for combining and
-analysing related data from
-different queries or tables.
-
-Used to retrieve and relate data
-from different tables based on
-their relationships.
-
-Result Set
-Structure
-
-Result sets may have different
-column names, but data types and
-counts must match.
-
-Result sets can have different
-column names, data types, and
-counts.
-
-Performance
-Considerations
-
-Generally faster and less complex
-than joins.
-
-Joins can be more complex and
-resource-intensive, especially for
-larger datasets.
 
 SUB QUERIES
 
@@ -850,11 +869,12 @@ one query (the inner query) as the input for another query (the outer query).
 Subqueries are often used to retrieve data that will be used for filtering, comparison, or
 calculation within the context of a larger query.
 They are a way to break down complex tasks into smaller, manageable steps.
+
 Syntax:
 SELECT columns
-
 FROM table
 WHERE column OPERATOR (SELECT column FROM table WHERE condition);
+
 In this syntax:
 ● columns refers to the specific columns you want to retrieve from the outer query.
 ● table is the name of the table you're querying.
@@ -862,94 +882,65 @@ In this syntax:
 ● OPERATOR is a comparison operator such as =, >, <, IN, NOT IN, etc.
 ● (SELECT column FROM table WHERE condition) is the subquery that provides the
 input for the comparison.
+
 Example: Consider two tables: Products and Orders.
 Products Table:
-ProductID ProductName Price
-1 Laptop 1000
-2 Smartphone 500
-3 Headphones 50
+ProductID   ProductName     Price
+1           Laptop          1000
+2           Smartphone      500
+3           Headphones      50
 
 Orders Table:
-OrderID ProductID Quantity
-101 1 2
-102 3 1
+OrderID     ProductID   Quantity
+101         1           2
+102         3           1
 
 For Example: Retrieve the product names and quantities for orders with a total cost greater
 than the average price of all products.
 SELECT ProductName, Quantity
 FROM Products
 WHERE Price * Quantity > (SELECT AVG(Price) FROM Products);
+
 Result:
+ProductName     Quantity
+Laptop          2
 
-ProductName Quantity
+# Differences Between Subqueries and Joins
 
-Laptop 2
+  -----------------------------------------------------------------------
+  Aspect                  Subqueries              Joins
+  ----------------------- ----------------------- -----------------------
+  **Purpose**             Retrieve data for       Combine data from
+                          filtering, comparison,  related tables based on
+                          or calculation within   specified conditions.
+                          the context of a larger 
+                          query.                  
 
-Differences Between Subqueries and Joins:
+  **Data Source**         Result of one query     Data from multiple
+                          used as input for       related tables.
+                          another query.          
 
-Aspect Subqueries Joins
+  **Combining Rows**      Not used for combining  Combines rows from
+                          rows; used to filter or different tables based
+                          evaluate data.          on specified join
+                                                  conditions.
 
-Purpose
+  **Result Set            Return scalar values,   Return multi-column
+  Structure**             single-column results,  result sets.
+                          or small result sets.   
 
-Retrieve data for filtering,
-comparison, or calculation
-within the context of a larger
-query.
+  **Performance           Can be slower and less  Generally more
+  Considerations**        efficient, especially   efficient for combining
+                          with large datasets.    data from multiple
+                                                  tables.
 
-Combine data from related tables
-based on specified conditions.
+  **Complexity**          Easier to understand    Can become more
+                          for simple tasks or     complex, but are better
+                          smaller datasets.       suited for large-scale
+                                                  data retrieval and
+                                                  combination tasks.
 
-Data Source
-
-Result of one query used as
-input for another query.
-
-Data from multiple related tables.
-
-Combining Rows
-
-Not used for combining rows;
-used to filter or evaluate data.
-
-Combines rows from different tables
-based on specified join conditions.
-
-Result Set
-Structure
-
-Subqueries return scalar
-values, single-column results,
-or small result sets.
-
-Joins return multi-column result
-sets.
-
-Performance
-Considerations
-
-Subqueries can be slower and
-less efficient, especially when
-dealing with large datasets.
-
-Joins can be more efficient for
-combining data from multiple tables.
-
-Complexity
-
-Subqueries can be easier to
-understand for simple tasks or
-smaller datasets.
-
-Joins can become complex, but are
-more suited for handling large-scale
-data retrieval and combination
-tasks.
-
-Versatility
-
-Subqueries can be used in
-various clauses: WHERE,
-FROM, HAVING, etc.
-
-Joins are primarily used in the
-FROM clause for combining tables.
+  **Versatility**         Can be used in `WHERE`, Primarily used in the
+                          `FROM`, `HAVING`, and   `FROM` clause for
+                          other clauses.          combining tables.
+  -----------------------------------------------------------------------
